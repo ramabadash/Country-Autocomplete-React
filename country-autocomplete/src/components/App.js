@@ -12,7 +12,7 @@ function App() {
   };
 
   const filterCountries = (str) => {
-    str = str.toLowerCase();
+    str = str ? str.toLowerCase() : '';
     const filterArr = countriesArr.filter((country) => country.label.toLowerCase().includes(str));
     return filterArr;
   };

@@ -3,14 +3,14 @@ import React from 'react';
 function DropDown(props) {
   return (
     <div>
-      <select id='countries'>
+      <ul id='countries'>
         {props.countries.map(({ code, label, phone }) => (
           // TODO - replace with component
-          <option value={label} key={label}>
+          <li key={label}>
             {code} {label} {phone}
-          </option>
+          </li>
         ))}
-      </select>
+      </ul>
     </div>
   );
 }
