@@ -6,9 +6,11 @@ import { countries } from '../countries';
 function App() {
   const [countriesArr, setCountriesArr] = useState(countries);
   const [searchStr, setSearchStr] = useState('');
+  const [pickedCountry, setPickedCountry] = useState('');
 
   const changeSearchStr = (str) => {
-    setSearchStr(str);
+    setSearchStr(str); // Update input value by typing
+    setPickedCountry(str); // Update country pick by typing
   };
 
   const filterCountries = (str) => {
@@ -17,11 +19,16 @@ function App() {
     return filterArr;
   };
 
+  const pickCountry = (event) => {
+    const countryName = event.target.closest('li').id;
+    setPickedCountry(countryName);
+  };
+
   return (
     <div>
       <h1>Country-Autocomplete</h1>
-      <SearchBar onStringChange={changeSearchStr} />
-      <DropDown countries={filterCountries(searchStr)} />
+      <SearchBar pickedCountry={pickedCountry} onStringChange={changeSearchStr} />
+      <DropDown pickCountry={pickCountry} countries={filterCountries(searchStr)} />
     </div>
   );
 }

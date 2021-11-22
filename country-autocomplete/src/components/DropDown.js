@@ -6,7 +6,7 @@ function DropDown(props) {
       <ul id='countries'>
         {props.countries.map(({ code, label, phone }) => (
           // TODO - replace with component
-          <li value={label} key={label}>
+          <li id={label} key={label} onClick={props.pickCountry}>
             <img alt='fleg' src={`https://flagcdn.com/16x12/${code.toLowerCase()}.png`} />
             {code} {label} {phone}
           </li>

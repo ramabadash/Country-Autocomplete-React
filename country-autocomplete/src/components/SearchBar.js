@@ -7,6 +7,7 @@ function SearchBar(props) {
       type='text'
       placeholder='country name..'
       ref={searchInput}
+      value={props.pickedCountry}
       onChange={() => {
         props.onStringChange(searchInput.current.value ? searchInput.current.value : '');
       }}
