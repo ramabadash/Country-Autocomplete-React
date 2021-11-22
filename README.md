@@ -1,5 +1,29 @@
 # React Functional Component
 
+---
+
+### App pics -
+
+---
+
+### Empty-close
+
+<img src="./readme-pics/empty-close.png" width="40%" hight="300px">
+
+### Empty-open
+
+<img src="./readme-pics/empty-open.png" width="40%" hight="300px">
+
+### With text - close
+
+<img src="./readme-pics/text-close.png" width="40%" hight="300px">
+
+### With text - open
+
+<img src="./readme-pics/text-open.png" width="40%" hight="300px">
+
+---
+
 ### Resources
 
 [React Hooks at reactjs.org](https://reactjs.org/docs/hooks-intro.html)
@@ -11,9 +35,9 @@
 - Use [CountriesJson](https://gist.github.com/keeguon/2310008) for data
 
 1. you will need to use the following hooks:
-   1. useState - to select the country from the dropdown
+   1. useState - to select the country from the dropdown [X]
    2. useEffect - to show matching countries when the input has changed
-   3. useRef - to show/hide dropdown
+   3. useRef - to show/hide dropdown [X]
 2. components suggestion:
    1. SearchBar
    2. OptionsDropdown
