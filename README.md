@@ -35,9 +35,9 @@
 - Use [CountriesJson](https://gist.github.com/keeguon/2310008) for data
 
 1. you will need to use the following hooks:
-   1. useState - to select the country from the dropdown [X]
+   1. useState - to select the country from the dropdown
    2. useEffect - to show matching countries when the input has changed
-   3. useRef - to show/hide dropdown [X]
+   3. useRef - to show/hide dropdown
 2. components suggestion:
    1. SearchBar
    2. OptionsDropdown

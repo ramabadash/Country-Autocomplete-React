@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DropDown from './DropDown';
 import SearchBar from './SearchBar';
 import { countries } from '../countries';
@@ -8,6 +8,13 @@ function App() {
   const [searchStr, setSearchStr] = useState('');
   const [pickedCountry, setPickedCountry] = useState('');
   const [isOpenList, setIsOpenList] = useState(false);
+
+  // Change countries arry state every time the "searchStr" / "pickedCountry" state is changing
+  useEffect(() => {
+    const str = searchStr ? searchStr.toLowerCase() : ''; //take searchSte from state
+    const filterArr = countries.filter((country) => country.label.toLowerCase().includes(str));
+    setCountriesArr(filterArr); //Set to state
+  }, [searchStr, pickedCountry]);
 
   //Show and Hide list
   const onSearchBarClick = () => {
@@ -20,12 +27,6 @@ function App() {
     setPickedCountry(str); // Update country pick by typing
   };
 
-  // Return filteres country array by country lebel
-  const filterCountries = (str) => {
-    str = str ? str.toLowerCase() : '';
-    const filterArr = countriesArr.filter((country) => country.label.toLowerCase().includes(str));
-    return filterArr;
-  };
   // On country click
   const pickCountry = (event) => {
     const countryName = event.target.closest('li').id;
@@ -37,7 +38,7 @@ function App() {
     <div>
       <h1>Country-Autocomplete</h1>
       <SearchBar onSearchBarClick={onSearchBarClick} pickedCountry={pickedCountry} onStringChange={changeSearchStr} />
-      <DropDown isOpenList={isOpenList} pickCountry={pickCountry} countries={filterCountries(searchStr)} />
+      <DropDown isOpenList={isOpenList} pickCountry={pickCountry} countries={countriesArr} />
     </div>
   );
 }
