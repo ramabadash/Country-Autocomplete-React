@@ -4,10 +4,10 @@ import SearchBar from './SearchBar';
 import { countries } from '../countries';
 
 function App() {
-  const [countriesArr, setCountriesArr] = useState(countries);
-  const [searchStr, setSearchStr] = useState('');
-  const [pickedCountry, setPickedCountry] = useState('');
-  const [isOpenList, setIsOpenList] = useState(false);
+  const [countriesArr, setCountriesArr] = useState(countries); //Filter Array of countrys by the "searchStr" state
+  const [searchStr, setSearchStr] = useState(''); // The search str from input value / by click on country
+  const [pickedCountry, setPickedCountry] = useState(''); // The picked country name
+  const [isOpenList, setIsOpenList] = useState(false); // Is the DropDown show / not
 
   // Change countries arry state every time the "searchStr" / "pickedCountry" state is changing
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
     setCountriesArr(filterArr); //Set to state
   }, [searchStr, pickedCountry]);
 
-  //Show and Hide list
+  //Show and Hide DropDown list
   const onSearchBarClick = () => {
     setIsOpenList((prevState) => !prevState);
   };

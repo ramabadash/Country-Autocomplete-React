@@ -8,16 +8,22 @@ function SearchBar(props) {
 
   return (
     <div>
+      {/* Search input */}
       <input
         type='text'
         placeholder='country name..'
         ref={searchInput}
         value={props.pickedCountry}
         onChange={() => {
-          // clearBtn.current.classList.remove('clear');
+          {
+            /* Update App state by input value */
+          }
           props.onStringChange(searchInput.current.value ? searchInput.current.value : '');
         }}
         onClick={() => {
+          {
+            /* Show and hide DropDown */
+          }
           props.onSearchBarClick();
           toggleBtn.current.classList.toggle('open');
         }}
@@ -34,6 +40,7 @@ function SearchBar(props) {
       ) : (
         ''
       )}
+      {/* Toggle between show and hide DropDown button */}
       <span
         ref={toggleBtn}
         className='open close'
