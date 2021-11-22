@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/DropDown.css';
 
 function DropDown(props) {
   return (
@@ -7,7 +8,7 @@ function DropDown(props) {
         {props.countries.map(({ code, label, phone }) => (
           // TODO - replace with component
           <li id={label} key={label} onClick={props.pickCountry}>
-            <img alt='fleg' src={`https://flagcdn.com/16x12/${code.toLowerCase()}.png`} />
+            <img alt='fleg' src={`https://flagcdn.com/28x21/${code.toLowerCase()}.png`} />
             {code} {label} {phone}
           </li>
         ))}
