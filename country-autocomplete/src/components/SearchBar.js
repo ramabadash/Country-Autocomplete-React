@@ -3,6 +3,7 @@ import '../styles/SearchBar.css';
 
 function SearchBar(props) {
   const searchInput = useRef('');
+  const clearBtn = useRef(null);
   const toggleBtn = useRef(null);
 
   return (
@@ -13,6 +14,7 @@ function SearchBar(props) {
         ref={searchInput}
         value={props.pickedCountry}
         onChange={() => {
+          // clearBtn.current.classList.remove('clear');
           props.onStringChange(searchInput.current.value ? searchInput.current.value : '');
         }}
         onClick={() => {
@@ -20,14 +22,18 @@ function SearchBar(props) {
           toggleBtn.current.classList.toggle('open');
         }}
       />
-      <button
-        onClick={() => {
-          props.onStringChange('');
-        }}
-      >
-        ❌
-      </button>
-      ></span>
+      {/* Show or hide clear button depending on the input value */}
+      {searchInput.current.value ? (
+        <span
+          className='clear'
+          ref={clearBtn}
+          onClick={() => {
+            props.onStringChange('');
+          }}
+        ></span>
+      ) : (
+        ''
+      )}
       <span
         ref={toggleBtn}
         className='open close'

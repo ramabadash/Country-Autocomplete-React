@@ -6,6 +6,12 @@ input {
   color: black;
   padding: 12px 16px;
 }
+
+.clear:after {
+  margin-left: -2em;
+  cursor: pointer;
+  content: '❌';
+}
 .close:after {
   margin-left: -3em;
   cursor: pointer;
