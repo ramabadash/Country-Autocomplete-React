@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Country-Autocomplete-React/static/css/main.8e2f0ca5.chunk.css",
+    "main.js": "/Country-Autocomplete-React/static/js/main.b66212a1.chunk.js",
+    "main.js.map": "/Country-Autocomplete-React/static/js/main.b66212a1.chunk.js.map",
+    "runtime-main.js": "/Country-Autocomplete-React/static/js/runtime-main.692c49b0.js",
+    "runtime-main.js.map": "/Country-Autocomplete-React/static/js/runtime-main.692c49b0.js.map",
+    "static/js/2.66699b5d.chunk.js": "/Country-Autocomplete-React/static/js/2.66699b5d.chunk.js",
+    "static/js/2.66699b5d.chunk.js.map": "/Country-Autocomplete-React/static/js/2.66699b5d.chunk.js.map",
+    "index.html": "/Country-Autocomplete-React/index.html",
+    "static/css/main.8e2f0ca5.chunk.css.map": "/Country-Autocomplete-React/static/css/main.8e2f0ca5.chunk.css.map",
+    "static/js/2.66699b5d.chunk.js.LICENSE.txt": "/Country-Autocomplete-React/static/js/2.66699b5d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.692c49b0.js",
+    "static/js/2.66699b5d.chunk.js",
+    "static/css/main.8e2f0ca5.chunk.css",
+    "static/js/main.b66212a1.chunk.js"
+  ]
+}
