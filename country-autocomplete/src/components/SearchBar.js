@@ -11,6 +11,7 @@ function SearchBar(props) {
       onChange={() => {
         props.onStringChange(searchInput.current.value ? searchInput.current.value : '');
       }}
+      onClick={props.onSearchBarClick}
     />
   );
 }

@@ -7,6 +7,11 @@ function App() {
   const [countriesArr, setCountriesArr] = useState(countries);
   const [searchStr, setSearchStr] = useState('');
   const [pickedCountry, setPickedCountry] = useState('');
+  const [isOpenList, setIsOpenList] = useState(false);
+
+  const onSearchBarClick = () => {
+    setIsOpenList((prevState) => !prevState);
+  };
 
   const changeSearchStr = (str) => {
     setSearchStr(str); // Update input value by typing
@@ -22,13 +27,14 @@ function App() {
   const pickCountry = (event) => {
     const countryName = event.target.closest('li').id;
     setPickedCountry(countryName);
+    setIsOpenList((prevState) => !prevState);
   };
 
   return (
     <div>
       <h1>Country-Autocomplete</h1>
-      <SearchBar pickedCountry={pickedCountry} onStringChange={changeSearchStr} />
-      <DropDown pickCountry={pickCountry} countries={filterCountries(searchStr)} />
+      <SearchBar onSearchBarClick={onSearchBarClick} pickedCountry={pickedCountry} onStringChange={changeSearchStr} />
+      <DropDown isOpenList={isOpenList} pickCountry={pickCountry} countries={filterCountries(searchStr)} />
     </div>
   );
 }

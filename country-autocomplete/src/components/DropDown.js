@@ -3,7 +3,7 @@ import React from 'react';
 function DropDown(props) {
   return (
     <div>
-      <ul id='countries'>
+      <ul id='countries' style={{ display: props.isOpenList ? 'block' : 'none' }}>
         {props.countries.map(({ code, label, phone }) => (
           // TODO - replace with component
           <li id={label} key={label} onClick={props.pickCountry}>
