@@ -1,0 +1,8 @@
+input {
+  background-color: #f1f1f1;
+  width: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: black;
+  padding: 12px 16px;
+}

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import '../styles/SearchBar.css';
 
 function SearchBar(props) {
   const searchInput = useRef('');
