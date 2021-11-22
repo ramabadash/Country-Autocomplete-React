@@ -3,6 +3,8 @@ import '../styles/SearchBar.css';
 
 function SearchBar(props) {
   const searchInput = useRef('');
+  const toggleBtn = useRef(null);
+
   return (
     <div>
       <input
@@ -13,7 +15,10 @@ function SearchBar(props) {
         onChange={() => {
           props.onStringChange(searchInput.current.value ? searchInput.current.value : '');
         }}
-        onClick={props.onSearchBarClick}
+        onClick={() => {
+          props.onSearchBarClick();
+          toggleBtn.current.classList.toggle('open');
+        }}
       />
       <button
         onClick={() => {
@@ -22,6 +27,15 @@ function SearchBar(props) {
       >
         ❌
       </button>
+      ></span>
+      <span
+        ref={toggleBtn}
+        className='open close'
+        onClick={() => {
+          props.onSearchBarClick();
+          toggleBtn.current.classList.toggle('open');
+        }}
+      ></span>
     </div>
   );
 }

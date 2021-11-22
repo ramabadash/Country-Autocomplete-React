@@ -6,3 +6,13 @@ input {
   color: black;
   padding: 12px 16px;
 }
+.close:after {
+  margin-left: -3em;
+  cursor: pointer;
+  content: '🔽';
+}
+.open:after {
+  margin-left: -3em;
+  cursor: pointer;
+  content: '🔼';
+}
