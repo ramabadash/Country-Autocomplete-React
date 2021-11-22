@@ -9,21 +9,24 @@ function App() {
   const [pickedCountry, setPickedCountry] = useState('');
   const [isOpenList, setIsOpenList] = useState(false);
 
+  //Show and Hide list
   const onSearchBarClick = () => {
     setIsOpenList((prevState) => !prevState);
   };
 
+  //Update state of searchStr & pickedCountry by the search string
   const changeSearchStr = (str) => {
     setSearchStr(str); // Update input value by typing
     setPickedCountry(str); // Update country pick by typing
   };
 
+  // Return filteres country array by country lebel
   const filterCountries = (str) => {
     str = str ? str.toLowerCase() : '';
     const filterArr = countriesArr.filter((country) => country.label.toLowerCase().includes(str));
     return filterArr;
   };
-
+  // On country click
   const pickCountry = (event) => {
     const countryName = event.target.closest('li').id;
     setPickedCountry(countryName);
