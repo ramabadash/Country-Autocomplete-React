@@ -5,10 +5,17 @@ import { countries } from '../countries';
 
 function App() {
   const [countriesArr, SetCountriesArr] = useState(countries);
+
+  const filterCountries = (str) => {
+    str = str.toLowerCase();
+    const filterArr = countriesArr.filter((country) => country.label.toLowerCase().includes(str));
+    return filterArr;
+  };
   return (
     <div>
       <h1>Country-Autocomplete</h1>
-      <DropDown countries={countriesArr} />
+      <SearchBar />
+      <DropDown countries={filterCountries('')} />
     </div>
   );
 }
